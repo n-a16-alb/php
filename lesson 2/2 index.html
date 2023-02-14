@@ -1,0 +1,66 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset=utf-8>
+		<title>Traffic Light</title>
+		<style>
+			.container{ /* обращаемся к элементу с классом container */
+				width: 300px; /* ширина блока */
+				background: rgb(0,0,0); /* характеристика фона */
+				margin: auto; /* величина отступа от каждого края элемента */
+				border: 3px solid gray; /* граница вокруг элемента */
+				margin-top: 100px; /* величина отступа от верхнего края элемента */
+			}
+			.stop, .wait, .go{ /* обращаемся к элементам с классами stop, wait, go */
+				width: 150px; /* ширина блока */
+				height: 150px; /* высота блока */
+				border-radius: 75px; /* устанавливает радиус скругления уголков рамки */
+				margin: auto; /* величина отступа от каждого края элемента */
+				margin-top: 15px; /* величина отступа от верхнего края элемента */
+				margin-bottom: 15px; /* величина отступа от нижнего края элемента */
+				border: 2px solid gray; /* граница вокруг элемента */
+				box-shadow: inset 0 0 15px 15px rgba(0,0,0,0.5); /* добавляет тень к элементу */
+				background: silver; /* характеристика фона */
+			}
+			.stop{ /* обращаемся к элементу с классом stop */
+				animation: stop 4s infinite; /* задаёт параметры анимации */
+			}
+			.wait{ /* обращаемся к элементу с классом wait */
+				animation: wait 4s infinite; /* задаёт параметры анимации */
+			}
+			.go{ /* обращаемся к элементу с классом go */
+				animation: go 4s infinite; /* задаёт параметры анимации */
+			}
+			@keyframes stop{ /* позволяет производить изменения постоянно и автоматически в элементе с классом stop */
+				0%{background:red;} /* характеристика фона */
+				24%{background:red;} /* характеристика фона */
+				25%{background:silver;} /* характеристика фона */
+				99%{background:silver;} /* характеристика фона */
+				100%{background:red;} /* характеристика фона */
+			}
+			@keyframes wait{ /* позволяет производить изменения постоянно и автоматически в элементе с классом wait */
+				24%{background:silver;} /* характеристика фона */
+				25%{background:yellow;} /* характеристика фона */
+				49%{background:yellow;} /* характеристика фона */
+				50%{background:silver;} /* характеристика фона */
+				74%{background:silver;} /* характеристика фона */
+				75%{background:yellow;} /* характеристика фона */
+				99%{background:yellow;} /* характеристика фона */
+				100%{background:silver;} /* характеристика фона */
+			}
+			@keyframes go{ /* позволяет производить изменения постоянно и автоматически в элементе с классом go */
+				49%{background:silver;} /* характеристика фона */
+				50%{background:green;} /* характеристика фона */
+				74%{background:green;} /* характеристика фона */
+				75%{background:silver;} /* характеристика фона */
+			}
+		</style>
+	</head>
+	<body>
+		<div class="container"> 
+			<div class="stop"></div> 
+			<div class="wait"></div> 
+			<div class="go"></div>
+		</div>
+	</body>
+</html>
